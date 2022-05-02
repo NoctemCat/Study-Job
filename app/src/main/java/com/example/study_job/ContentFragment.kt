@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.study_job.databinding.FragmentContentBinding
+import com.example.study_job.ui.account.AccountFragment
 import com.example.study_job.ui.chat.ChatFragment
 import com.example.study_job.ui.search.SearchFragment
 import com.example.study_job.ui.home.HomeFragment
@@ -81,6 +82,11 @@ class ContentFragment : Fragment() {
                 R.id.navigation_chat -> {
                     childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
                         ChatFragment()
+                    ).commit()
+                }
+                R.id.navigation_account -> {
+                    childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                        AccountFragment()
                     ).commit()
                 }
             }

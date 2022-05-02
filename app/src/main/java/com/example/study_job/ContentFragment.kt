@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.example.study_job.databinding.FragmentContentBinding
 import com.example.study_job.ui.account.AccountFragment
@@ -14,33 +15,9 @@ import com.example.study_job.ui.home.HomeFragment
 import com.example.study_job.ui.guide.GuideFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ContentFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ContentFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
-
     private var _binding: FragmentContentBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,11 +26,12 @@ class ContentFragment : Fragment() {
         _binding = FragmentContentBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
+        val navHost: View = binding.navHostFragmentActivityMain
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
 
         if(savedInstanceState == null){
-            childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+            childFragmentManager.beginTransaction().replace(navHost.id,
                 HomeFragment()
             ).commit()
         }
@@ -61,27 +39,27 @@ class ContentFragment : Fragment() {
         navView.setOnItemSelectedListener{ item: MenuItem ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                    childFragmentManager.beginTransaction().replace(navHost.id,
                         HomeFragment()
                     ).commit()
                 }
                 R.id.navigation_search -> {
-                    childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                    childFragmentManager.beginTransaction().replace(navHost.id,
                         SearchFragment()
                     ).commit()
                 }
                 R.id.navigation_guide -> {
-                    childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                    childFragmentManager.beginTransaction().replace(navHost.id,
                         GuideFragment()
                     ).commit()
                 }
                 R.id.navigation_chat -> {
-                    childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                    childFragmentManager.beginTransaction().replace(navHost.id,
                         ChatFragment()
                     ).commit()
                 }
                 R.id.navigation_account -> {
-                    childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                    childFragmentManager.beginTransaction().replace(navHost.id,
                         AccountFragment()
                     ).commit()
                 }
@@ -96,6 +74,14 @@ class ContentFragment : Fragment() {
         @JvmStatic
         fun newInstance() = ContentFragment()
     }
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        arguments?.let {
+//            param1 = it.getString(ARG_PARAM1)
+//            param2 = it.getString(ARG_PARAM2)
+//        }
+//    }
 //    companion object {
 //        @JvmStatic
 //        fun newInstance(param1: String?, param2: String?) =

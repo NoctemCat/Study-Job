@@ -36,6 +36,7 @@ class RegisterFragment : Fragment() {
             fragmentManager.beginTransaction().replace(R.id.root_fragment_activity_main,
                 LoginFragment.newInstance()
             ).commit()
+
         }
 
         return root

@@ -67,9 +67,9 @@ class ContentFragment : Fragment() {
             true
         }
 
-
         return root
     }
+
     companion object {
         @JvmStatic
         fun newInstance() = ContentFragment()

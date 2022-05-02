@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.study_job.databinding.FragmentContentBinding
-import com.example.study_job.ui.dashboard.DashboardFragment
+import com.example.study_job.ui.search.SearchFragment
 import com.example.study_job.ui.home.HomeFragment
-import com.example.study_job.ui.notifications.NotificationsFragment
+import com.example.study_job.ui.guide.GuideFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,7 +43,7 @@ class ContentFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentContentBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
@@ -69,12 +69,12 @@ class ContentFragment : Fragment() {
                 }
                 R.id.navigation_dashboard -> {
                     childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
-                        DashboardFragment()
+                        SearchFragment()
                     ).commit()
                 }
                 R.id.navigation_notifications -> {
                     childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
-                        NotificationsFragment()
+                        GuideFragment()
                     ).commit()
                 }
             }
@@ -82,7 +82,7 @@ class ContentFragment : Fragment() {
         }
 
 
-        return root;
+        return root
     }
 
     companion object {
@@ -95,8 +95,4 @@ class ContentFragment : Fragment() {
                 }
             }
     }
-}
-
-private fun BottomNavigationView.setOnItemSelectedListener(function: (item: MenuItem) -> Unit) {
-
 }

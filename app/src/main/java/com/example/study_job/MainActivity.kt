@@ -3,6 +3,7 @@ package com.example.study_job
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.study_job.databinding.ActivityMainBinding
+import com.example.study_job.ui.login.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
             .setReorderingAllowed(true)
-            .replace(R.id.root_fragment_activity_main, ContentFragment.newInstance("df", "d"))
+            .replace(R.id.root_fragment_activity_main, LoginFragment.newInstance())
             .commit()
     }
 }

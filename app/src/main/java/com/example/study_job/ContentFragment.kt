@@ -52,16 +52,12 @@ class ContentFragment : Fragment() {
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
 
-//        val navController = findNavController(binding.navHostFragmentActivityMain)
+        if(savedInstanceState == null){
+            childFragmentManager.beginTransaction().replace(binding.navHostFragmentActivityMain.id,
+                HomeFragment()
+            ).commit()
+        }
 
-//        val appBarConfiguration = AppBarConfiguration(setOf(
-//            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
-//        //setupActionBarWithNavController(navController, appBarConfiguration)
-//        //setupActionBarWithNavController(activity, navController , appBarConfiguration)
-//
-//        //navController.
-
-//        navView.setupWithNavController(navController)
         navView.setOnItemSelectedListener{ item: MenuItem ->
             when (item.itemId) {
                 R.id.navigation_home -> {
@@ -96,15 +92,18 @@ class ContentFragment : Fragment() {
 
         return root
     }
-
     companion object {
         @JvmStatic
-        fun newInstance(param1: String?, param2: String?) =
-            ContentFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = ContentFragment()
     }
+//    companion object {
+//        @JvmStatic
+//        fun newInstance(param1: String?, param2: String?) =
+//            ContentFragment().apply {
+//                arguments = Bundle().apply {
+//                    putString(ARG_PARAM1, param1)
+//                    putString(ARG_PARAM2, param2)
+//                }
+//            }
+//    }
 }

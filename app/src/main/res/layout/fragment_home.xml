@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/BotNavBarHeight"
+    android:paddingTop="@dimen/BotNavBarHeight"
     tools:context=".ui.home.HomeFragment">
 
     <TextView

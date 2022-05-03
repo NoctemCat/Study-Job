@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
+        val act: AppCompatActivity = requireActivity() as AppCompatActivity
+        act.supportActionBar?.show()
     }
 }
 

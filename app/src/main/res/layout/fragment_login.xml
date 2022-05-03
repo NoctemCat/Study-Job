@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bglogin"
-    android:backgroundTint="#0284C7"
+    android:backgroundTint="@color/light_blue"
     android:backgroundTintMode="add"
     tools:context=".ui.login.LoginFragment"
     >
@@ -57,7 +57,7 @@
             android:layout_marginBottom="@dimen/margin_input"
             android:background="@drawable/rounded_edit_text"
             android:hint="Пароль"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:minHeight="48dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"

@@ -7,13 +7,12 @@
     tools:context=".ui.login.RegisterFragment"
     >
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:background="#A1888888"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +21,12 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/register_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingBottom="120dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,7 +87,7 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Фамилия"
                     android:importantForAutofill="no"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
@@ -98,7 +102,7 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Имя"
                     android:importantForAutofill="no"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
@@ -113,7 +117,7 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Отчество"
                     android:importantForAutofill="no"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
@@ -128,7 +132,98 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Возраст"
                     android:importantForAutofill="no"
-                    android:inputType="textPassword"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="#757575" />
+
+                <Spinner
+                    android:id="@+id/spin_role"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_input"
+                    android:layout_marginBottom="@dimen/margin_input"
+                    android:background="@drawable/rounded_edit_text"
+                    android:minHeight="48dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/et_reg_pupil_grade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_input"
+                    android:layout_marginBottom="@dimen/margin_input"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint="Класс"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="#757575" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/et_reg_student_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_input"
+                    android:layout_marginBottom="@dimen/margin_input"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint="Место учебы"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="#757575" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/et_reg_student_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_input"
+                    android:layout_marginBottom="@dimen/margin_input"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint="Курс"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="#757575" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/et_reg_teacher_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_input"
+                    android:layout_marginBottom="@dimen/margin_input"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint="Место работы"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="#757575" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/et_reg_teacher_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_input"
+                    android:layout_marginBottom="@dimen/margin_input"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint="Должность"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
@@ -144,7 +239,10 @@
             android:layout_height="wrap_content"
             android:text="@string/button_register"
             app:cornerRadius="16dp"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/goto_log_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/goto_log_button"
@@ -152,8 +250,11 @@
             android:layout_height="wrap_content"
             android:text="@string/button_goto_log"
             app:cornerRadius="16dp"
-            android:layout_marginBottom="8dp" />
-    </LinearLayout>
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

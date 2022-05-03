@@ -24,7 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat"
             android:text="Обработать"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:backgroundTint="@color/light_blue"
             app:cornerRadius="16dp" />
     </LinearLayout>>

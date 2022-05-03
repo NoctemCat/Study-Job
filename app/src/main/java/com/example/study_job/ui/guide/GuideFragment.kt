@@ -23,13 +23,6 @@ class GuideFragment : BaseFragment() {
     ): View {
         _binding = FragmentGuideBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val textView: TextView = binding.textGuide
-
-        val notificationsViewModel =
-            ViewModelProvider(this)[GuideViewModel::class.java]
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

@@ -42,6 +42,7 @@
             android:layout_marginTop="@dimen/margin_input"
             android:layout_marginBottom="@dimen/margin_input"
             android:background="@drawable/rounded_edit_text"
+            android:fontFamily="@font/montserrat"
             android:hint="Логин"
             android:inputType="text"
             android:minHeight="48dp"
@@ -56,6 +57,7 @@
             android:layout_marginTop="@dimen/margin_input"
             android:layout_marginBottom="@dimen/margin_input"
             android:background="@drawable/rounded_edit_text"
+            android:fontFamily="@font/montserrat"
             android:hint="Пароль"
             android:inputType="textPassword"
             android:minHeight="48dp"
@@ -64,20 +66,24 @@
             android:textColorHint="#757575" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_btn"
+            android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat"
             android:text="@string/button_login"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:backgroundTint="#0284C7"
             app:cornerRadius="16dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/goto_reg_button"
+            android:id="@+id/gotoRegButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:fontFamily="@font/montserrat"
             android:text="@string/button_goto_reg"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:backgroundTint="#0284C7"
             app:cornerRadius="16dp" />
     </LinearLayout>

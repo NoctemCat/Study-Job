@@ -10,7 +10,8 @@ class User(
     var studentPlace: String? = null,
     var studentGroup: String? = null,
     var teacherPlace: String? = null,
-    var teacherPosition: String? = null
+    var teacherPosition: String? = null,
+    var personality: String? = null
 ){
     init {
         if(schoolGrade == -1){

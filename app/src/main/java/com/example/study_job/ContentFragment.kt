@@ -60,7 +60,7 @@ class ContentFragment : Fragment() {
                 }
                 R.id.navigation_guide -> {
                     childFragmentManager.beginTransaction().replace(navHost.id,
-                        ProffPairFragment()
+                        GuideFragment()
                     ).commit()
                 }
                 R.id.navigation_chat -> {

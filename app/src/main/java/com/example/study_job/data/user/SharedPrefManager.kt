@@ -22,6 +22,7 @@ class SharedPrefManager {
         private const val KEY_STUDENT_GROUP = "keystudgroup"
         private const val KEY_TEACHER_PLACE = "keysteachplace"
         private const val KEY_TEACHER_POSITION = "keysteachpos"
+        private const val KEY_PERSONALITY = "keypersonality"
 
         fun userLogin(context: Context, user: User) {
             val sharedPreferences: SharedPreferences = context.getSharedPreferences(
@@ -38,6 +39,7 @@ class SharedPrefManager {
             editor.putString(KEY_STUDENT_GROUP, user.studentGroup)
             editor.putString(KEY_TEACHER_PLACE, user.teacherPlace)
             editor.putString(KEY_TEACHER_POSITION, user.teacherPosition)
+            editor.putString(KEY_PERSONALITY, user.personality)
             editor.apply()
         }
 
@@ -63,8 +65,18 @@ class SharedPrefManager {
                 sharedPreferences.getString(KEY_STUDENT_PLACE, null),
                 sharedPreferences.getString(KEY_STUDENT_GROUP, null),
                 sharedPreferences.getString(KEY_TEACHER_PLACE, null),
-                sharedPreferences.getString(KEY_TEACHER_POSITION, null)
+                sharedPreferences.getString(KEY_TEACHER_POSITION, null),
+                sharedPreferences.getString(KEY_PERSONALITY, null)
             )
+        }
+
+        fun updatePersonality(context: Context, persona: String){
+            val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+                SHARED_PREF_NAME, Context.MODE_PRIVATE
+            )
+            val editor = sharedPreferences.edit()
+            editor.putString(KEY_PERSONALITY, persona)
+            editor.apply()
         }
 
         //this method will logout the user

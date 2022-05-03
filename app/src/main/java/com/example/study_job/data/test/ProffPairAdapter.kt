@@ -1,5 +1,7 @@
 package com.example.study_job.data.test
 
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +11,14 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.study_job.R
+import com.example.study_job.data.RequestHandler
+import com.example.study_job.data.URLs
+import com.example.study_job.data.user.SharedPrefManager
+import com.example.study_job.data.user.User
 import com.google.android.material.button.MaterialButton
+import org.json.JSONException
+import org.json.JSONObject
+import java.util.concurrent.Executors
 import kotlin.random.Random
 
 
@@ -92,12 +101,12 @@ class ProductTypesAdapter(products: List<ProffPair>, viewModel: ProffPairViewMod
             holder.button!!.setOnClickListener {
                 val arr: Array<String>? = mViewModel.testResult.value
 
-                var i: Int = 0
-                var ii: Int = 0
-                var iii: Int = 0
-                var iv: Int = 0
-                var v: Int = 0
-                var vi: Int = 0
+                var i = 0
+                var ii = 0
+                var iii = 0
+                var iv = 0
+                var v = 0
+                var vi = 0
                 if (arr != null) {
 
                     for (index in 0..41) {
@@ -155,7 +164,7 @@ class ProductTypesAdapter(products: List<ProffPair>, viewModel: ProffPairViewMod
                     if (arr[40] == "A") vi++ else iii++
                     if (arr[41] == "A") iv++ else vi++
 
-                    var arrInt = arrayOf(i, ii, iii, iv, v, vi)
+                    val arrInt = arrayOf(i, ii, iii, iv, v, vi)
                     var maxIndex = -1
                     var curMax = -1
                     for (index in 0..5) {
@@ -165,9 +174,50 @@ class ProductTypesAdapter(products: List<ProffPair>, viewModel: ProffPairViewMod
                         }
                     }
 
+                    val executor = Executors.newSingleThreadExecutor()
+                    val handler = Handler(Looper.getMainLooper())
+
+                    executor.execute {
+
+                        val requestHandler = RequestHandler()
+                        val user: User = SharedPrefManager.getUser(holder.button!!.context)
+
+                        val params = HashMap<String, String>()
+                        params["id"] = user.id.toString()
+                        params["personality"] = maxIndex.toString()
+
+                        val response = requestHandler.sendPostRequest(URLs.URL_UPDATE_USER_PERSONA, params)
+                        handler.post {
+                            try {
+                                val json = JSONObject(response)
+                                if (!json.getBoolean("error")) {
+                                    //storing the user in shared preferences
+                                    SharedPrefManager.updatePersonality(holder.button!!.context, maxIndex.toString())
+
+//                                    //starting the profile activity
+//                                    val fragmentManager =
+//                                        (holder.button!!.context as FragmentActivity).supportFragmentManager
+//                                    fragmentManager.beginTransaction().replace(
+//                                        R.id.root_fragment_activity_main,
+//                                        ContentFragment.newInstance()
+//                                    ).commit()
+                                }else{
+                                    Toast.makeText(
+                                        holder.button!!.context,
+                                        json.getString("message"),
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                            } catch (e: JSONException) {
+
+                                e.printStackTrace()
+                            }
+
+                        }
+                    }
                     Toast.makeText(
                         holder.button!!.context,
-                        (maxIndex+1).toString(),
+                        (maxIndex).toString(),
                         Toast.LENGTH_LONG
                     ).show()
                 }

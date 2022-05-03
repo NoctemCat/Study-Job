@@ -89,7 +89,6 @@ class LoginFragment : HiddenActionBarFragment() {
 
             val response = requestHandler.sendPostRequest(URLs.URL_LOGIN, params)
 
-
             handler.post {
                 try {
                     val json = JSONObject(response)

@@ -106,7 +106,8 @@ class LoginFragment : HiddenActionBarFragment() {
                             userJson.getString("student_place"),
                             userJson.getString("student_group"),
                             userJson.getString("teacher_place"),
-                            userJson.getString("teacher_position")
+                            userJson.getString("teacher_position"),
+                            userJson.getString("personality")
                         )
 
                         //storing the user in shared preferences

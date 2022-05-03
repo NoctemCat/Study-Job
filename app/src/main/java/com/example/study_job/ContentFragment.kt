@@ -35,49 +35,38 @@ class ContentFragment : Fragment() {
         //navView.itemIconTintList = null
 
         if(savedInstanceState == null){
-            childFragmentManager.beginTransaction().replace(navHost.id,
-                HomeFragment()
-            ).commit()
+            replaceFragment(HomeFragment())
         }
-
-//        val fragmentManager = (requireContext() as FragmentActivity).supportFragmentManager
-//        fragmentManager.beginTransaction().replace(R.id.root_fragment_activity_main,
-//            ContentFragment.newInstance()
-//        ).commit()
-
 
         navView.setOnItemSelectedListener{ item: MenuItem ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    childFragmentManager.beginTransaction().replace(navHost.id,
-                        HomeFragment()
-                    ).commit()
+                    replaceFragment(HomeFragment())
                 }
                 R.id.navigation_search -> {
-                    childFragmentManager.beginTransaction().replace(navHost.id,
-                        SearchFragment()
-                    ).commit()
+                    replaceFragment(SearchFragment())
                 }
                 R.id.navigation_guide -> {
-                    childFragmentManager.beginTransaction().replace(navHost.id,
-                        GuideFragment()
-                    ).commit()
+                    replaceFragment(GuideFragment())
                 }
                 R.id.navigation_chat -> {
-                    childFragmentManager.beginTransaction().replace(navHost.id,
-                        ChatFragment()
-                    ).commit()
+                    replaceFragment(ChatFragment())
                 }
                 R.id.navigation_account -> {
-                    childFragmentManager.beginTransaction().replace(navHost.id,
-                        AccountFragment()
-                    ).commit()
+                    replaceFragment(AccountFragment())
                 }
             }
             true
         }
 
         return root
+    }
+
+    fun replaceFragment(fragment: Fragment){
+        val fragmentManager = (context as FragmentActivity).supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.nav_host_fragment_activity_main,
+            fragment
+        ).commit()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

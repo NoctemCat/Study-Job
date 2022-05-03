@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.study_job.R
 import com.example.study_job.data.RequestHandler
 import com.example.study_job.data.URLs
 import com.example.study_job.data.user.SharedPrefManager
 import com.example.study_job.data.user.User
+import com.example.study_job.ui.guide.PersonaFragment
 import com.google.android.material.button.MaterialButton
 import org.json.JSONException
 import org.json.JSONObject
@@ -22,8 +24,8 @@ import java.util.concurrent.Executors
 import kotlin.random.Random
 
 
-class ProductTypesAdapter(products: List<ProffPair>, viewModel: ProffPairViewModel) :
-    RecyclerView.Adapter<ProductTypesAdapter.ViewHolder>() {
+class ProffPairAdapter(products: List<ProffPair>, viewModel: ProffPairViewModel) :
+    RecyclerView.Adapter<ProffPairAdapter.ViewHolder>() {
 
     private val mProffPairs: List<ProffPair> = products
     private val mViewModel: ProffPairViewModel = viewModel
@@ -194,13 +196,12 @@ class ProductTypesAdapter(products: List<ProffPair>, viewModel: ProffPairViewMod
                                     //storing the user in shared preferences
                                     SharedPrefManager.updatePersonality(holder.button!!.context, maxIndex.toString())
 
-//                                    //starting the profile activity
-//                                    val fragmentManager =
-//                                        (holder.button!!.context as FragmentActivity).supportFragmentManager
-//                                    fragmentManager.beginTransaction().replace(
-//                                        R.id.root_fragment_activity_main,
-//                                        ContentFragment.newInstance()
-//                                    ).commit()
+                                    val fragmentManager =
+                                        (holder.button!!.context as FragmentActivity).supportFragmentManager
+                                    fragmentManager.beginTransaction().replace(
+                                        R.id.nav_host_fragment_activity_main,
+                                        PersonaFragment()
+                                    ).commit()
                                 }else{
                                     Toast.makeText(
                                         holder.button!!.context,
@@ -215,11 +216,6 @@ class ProductTypesAdapter(products: List<ProffPair>, viewModel: ProffPairViewMod
 
                         }
                     }
-                    Toast.makeText(
-                        holder.button!!.context,
-                        (maxIndex).toString(),
-                        Toast.LENGTH_LONG
-                    ).show()
                 }
             }
         }

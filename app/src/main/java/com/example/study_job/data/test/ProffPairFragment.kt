@@ -4,15 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.study_job.BaseFragment
 import com.example.study_job.R
 import com.example.study_job.databinding.ListTestPairBinding
-import com.example.study_job.ui.account.AccountViewModel
-import java.util.*
 
 class ProffPairFragment : BaseFragment() {
     private var _binding: ListTestPairBinding? = null
@@ -33,8 +30,7 @@ class ProffPairFragment : BaseFragment() {
         rvProductTypes.layoutManager = gridLayoutManager
 
         val productTypes: List<ProffPair> = ProffPair.getProffPairList()
-
-        rvProductTypes.adapter = ProductTypesAdapter(productTypes, viewModel)
+        rvProductTypes.adapter = ProffPairAdapter(productTypes, viewModel)
 
         return view
     }

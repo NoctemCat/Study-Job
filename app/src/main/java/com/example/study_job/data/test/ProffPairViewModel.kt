@@ -11,7 +11,7 @@ class ProffPairViewModel : ViewModel() {
     val testResult: LiveData<Array<String>> = _testResult
 
     fun setResult(pos: Int, res: String){
-        if(pos in 1..41){
+        if(pos in 0..41){
             _testResult.value?.set(pos, res)
         }
     }

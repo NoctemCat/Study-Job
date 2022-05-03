@@ -1,5 +1,7 @@
 package com.example.study_job.data.test
 
+import kotlin.random.Random
+
 class ProffPair (
     var aProfession: String,
     var bProfession: String
@@ -58,3 +60,20 @@ class ProffPair (
     }
 }
 
+//val btn = holder.button!!
+//
+//btn.text = "Рандом"
+//btn.setOnClickListener{
+//    val arr: Array<String>? = mViewModel.testResult.value
+//
+//    if (arr != null) {
+//        for (index in 0..41) {
+//            if(Random.nextInt(0, 2) == 0){
+//                mViewModel.setResult(index, "A")
+//            }else{
+//                mViewModel.setResult(index, "B")
+//            }
+//
+//        }
+//    }
+//}

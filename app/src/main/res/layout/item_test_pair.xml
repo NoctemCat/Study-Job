@@ -26,13 +26,15 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_login_card"
-            android:clickable="true"
-            android:elevation="4dp"
             android:backgroundTint="@color/light_gray"
             android:backgroundTintMode="screen"
+            android:clickable="true"
+            android:elevation="4dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:padding="20dp"
-            android:text="yertysdcxzcvzarercxzczxcasdfa" />
+            android:text="yertysdcxzcvzarercxzczxcasdfa"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvChoiceB"
@@ -47,7 +49,9 @@
             android:elevation="4dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:padding="20dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="16sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
 

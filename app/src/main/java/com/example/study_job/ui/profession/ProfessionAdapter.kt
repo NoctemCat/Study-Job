@@ -4,10 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.study_job.R
 import com.example.study_job.data.test.ProffPair
 import com.example.study_job.data.test.ProffPairViewModel
+import com.example.study_job.ui.vacancies.VacancyFragment
 import com.google.android.material.button.MaterialButton
 
 class ProfessionAdapter (professions: ArrayList<Profession>) :
@@ -31,6 +34,14 @@ class ProfessionAdapter (professions: ArrayList<Profession>) :
         holder.tvProfSpec.text = profession.profSpec
         holder.tvQual.text = profession.qual
         holder.tvPersona.text = profession.persona
+
+        holder.cardView.setOnClickListener {
+            val fragmentManager = (holder.cardView.context as FragmentActivity).supportFragmentManager
+            fragmentManager.beginTransaction().replace(
+                R.id.nav_host_fragment_activity_main,
+                VacancyFragment.newInstance(holder.tvQual.text.toString())
+            ).commit()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -43,5 +54,6 @@ class ProfessionAdapter (professions: ArrayList<Profession>) :
         var tvProfSpec: TextView = itemView.findViewById<View>(R.id.tvProfSpec) as TextView
         var tvQual: TextView = itemView.findViewById<View>(R.id.tvQual) as TextView
         var tvPersona: TextView = itemView.findViewById<View>(R.id.tvPersona) as TextView
+        var cardView: CardView = itemView.findViewById<View>(R.id.cardProfession) as CardView
     }
 }

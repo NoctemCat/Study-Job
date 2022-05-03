@@ -36,7 +36,7 @@ class EntityTypeFragment : HiddenActionBarFragment() {
             val fragmentManager = (view.context as FragmentActivity).supportFragmentManager
             fragmentManager.beginTransaction().replace(
                 R.id.root_fragment_activity_main,
-                RegisterFragment.newInstance()
+                LoginFragment.newInstance()
             ).commit()
         }
 

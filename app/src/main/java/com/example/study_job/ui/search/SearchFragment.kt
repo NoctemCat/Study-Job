@@ -13,6 +13,7 @@ import com.example.study_job.R
 import com.example.study_job.data.test.ProffPairFragment
 import com.example.study_job.databinding.FragmentSearchBinding
 import com.example.study_job.ui.profession.ProfessionFragment
+import com.example.study_job.ui.vacancies.VacancyFragment
 
 class SearchFragment : BaseFragment() {
 
@@ -36,6 +37,15 @@ class SearchFragment : BaseFragment() {
             fragmentManager.beginTransaction().replace(
                 R.id.nav_host_fragment_activity_main,
                 ProfessionFragment.newInstance(false)
+            ).commit()
+        }
+
+        val vacanBtn = binding.vakBtn
+        vacanBtn.setOnClickListener {
+            val fragmentManager = (profBtn.context as FragmentActivity).supportFragmentManager
+            fragmentManager.beginTransaction().replace(
+                R.id.nav_host_fragment_activity_main,
+                VacancyFragment.newInstance("")
             ).commit()
         }
 

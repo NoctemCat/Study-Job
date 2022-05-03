@@ -13,4 +13,8 @@ object URLs {
     private const val ROOT_PROFESSIONS_URL = "http://192.168.0.62:81/profession.php?apicall="
     const val URL_PROFS_BY_PERSONA = ROOT_PROFESSIONS_URL + "get_by_persona"
     const val URL_PROFS_GET = ROOT_PROFESSIONS_URL + "get"
+
+    private const val TRUDVSEM_CONNECT_URL = "http://opendata.trudvsem.ru/api/v1/vacancies/region/1400000000000"
+    const val URL_GET_VACAN = TRUDVSEM_CONNECT_URL + "?offset=1&limit=40"
+    const val URL_SEARCH_VACAN = TRUDVSEM_CONNECT_URL+"?text="
 }

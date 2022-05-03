@@ -1,0 +1,81 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/cardVacancy"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="10dp"
+    android:padding="20dp"
+    app:cardElevation="2dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvJobName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEmployment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

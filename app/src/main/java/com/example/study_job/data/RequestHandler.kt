@@ -41,6 +41,32 @@ class RequestHandler {
         return sb.toString()
     }
 
+    fun sendGetRequest(requestURL: String?): String {
+        val url: URL
+        var sb = StringBuilder()
+        try {
+            url = URL(requestURL)
+            val conn = url.openConnection() as HttpURLConnection
+            conn.readTimeout = 15000
+            conn.connectTimeout = 15000
+            conn.requestMethod = "GET"
+            conn.doInput = true
+
+            val responseCode = conn.responseCode
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                val br = BufferedReader(InputStreamReader(conn.inputStream))
+                sb = StringBuilder()
+                var response: String?
+                while (br.readLine().also { response = it } != null) {
+                    sb.append(response)
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return sb.toString()
+    }
+
     //this method is converting keyvalue pairs data into a query string as needed to send to the server
     @Throws(UnsupportedEncodingException::class)
     private fun getPostDataString(params: HashMap<String, String>): String {

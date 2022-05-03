@@ -52,7 +52,6 @@ class ProfessionFragment : BaseFragment() {
         val handler = Handler(Looper.getMainLooper())
 
         executor.execute {
-            Log.d("exec", "begin async")
             val requestHandler = RequestHandler()
             val user: User = SharedPrefManager.getUser(binding.root.context)
 
@@ -67,14 +66,11 @@ class ProfessionFragment : BaseFragment() {
 
             val responsePersonas = requestHandler.sendPostRequest(URL_GET_PERSONAS, params)
 
-            Log.d("exec", "before handler")
             handler.post {
                 try {
-                    Log.d("exec", "Inside handler")
                     val json = JSONObject(response)
                     val personasJson = JSONObject(responsePersonas)
                     if (!json.getBoolean("error") && !personasJson.getBoolean("error")) {
-                        Log.d("exec", "No error")
                         val profArr: JSONArray = json.getJSONArray("professions")
                         val personaArr: JSONArray = personasJson.getJSONArray("personas")
 
@@ -98,10 +94,8 @@ class ProfessionFragment : BaseFragment() {
                             }
                             profs.add(newProf)
                         }
-                        Log.d("exec", "After for")
 
                         if(profs.size > 0){
-                            Log.d("exec", "Set adapter")
                             val rvProfessions = binding.root.findViewById<View>(R.id.list_professions) as RecyclerView
                             rvProfessions.adapter = ProfessionAdapter(profs)
                         }

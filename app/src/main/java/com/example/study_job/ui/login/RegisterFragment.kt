@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.example.study_job.ContentFragment
+import com.example.study_job.HiddenActionBarFragment
 import com.example.study_job.R
 import com.example.study_job.databinding.FragmentRegisterBinding
 import com.google.android.material.button.MaterialButton
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : HiddenActionBarFragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 

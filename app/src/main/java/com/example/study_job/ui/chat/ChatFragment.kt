@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.example.study_job.BaseFragment
 import com.example.study_job.R
 import com.example.study_job.databinding.FragmentChatBinding
 
 
-class ChatFragment : Fragment() {
+class ChatFragment : BaseFragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private var _binding: FragmentChatBinding? = null

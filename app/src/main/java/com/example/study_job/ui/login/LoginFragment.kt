@@ -8,11 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.study_job.ContentFragment
+import com.example.study_job.HiddenActionBarFragment
 import com.example.study_job.R
 import com.example.study_job.databinding.FragmentLoginBinding
 import com.google.android.material.button.MaterialButton
 
-class LoginFragment : Fragment() {
+class LoginFragment : HiddenActionBarFragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 

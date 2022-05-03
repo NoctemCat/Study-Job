@@ -15,7 +15,7 @@ import com.example.study_job.ui.home.HomeFragment
 import com.example.study_job.ui.guide.GuideFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class ContentFragment : Fragment() {
+class ContentFragment : BaseFragment() {
     private var _binding: FragmentContentBinding? = null
     private val binding get() = _binding!!
 

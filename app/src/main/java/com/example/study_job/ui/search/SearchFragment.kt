@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.study_job.BaseFragment
 import com.example.study_job.databinding.FragmentSearchBinding
 
-class SearchFragment : Fragment() {
+class SearchFragment : BaseFragment() {
 
     private var _binding: FragmentSearchBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(

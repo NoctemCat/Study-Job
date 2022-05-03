@@ -4,29 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.RegisterFragment"
-    >
+    android:background="@drawable/bglogin"
+    android:backgroundTint="#0284C7"
+    android:backgroundTintMode="add"
+    tools:context=".ui.login.RegisterFragment">
+
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:background="#A1888888"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_login_card"
         android:gravity="center_horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/logo_image">
 
         <ScrollView
+            android:id="@+id/register_scroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="380dp"
             app:layout_constraintBottom_toTopOf="@+id/register_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:paddingBottom="120dp"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -79,43 +92,13 @@
                     android:textColorHint="#757575" />
 
                 <EditText
-                    android:id="@+id/et_reg_family_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_input"
-                    android:layout_marginBottom="@dimen/margin_input"
-                    android:background="@drawable/rounded_edit_text"
-                    android:hint="Фамилия"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
-
-                <EditText
                     android:id="@+id/et_reg_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_input"
                     android:layout_marginBottom="@dimen/margin_input"
                     android:background="@drawable/rounded_edit_text"
-                    android:hint="Имя"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
-
-                <EditText
-                    android:id="@+id/et_reg_middle_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_input"
-                    android:layout_marginBottom="@dimen/margin_input"
-                    android:background="@drawable/rounded_edit_text"
-                    android:hint="Отчество"
+                    android:hint="ФИО"
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:minHeight="48dp"
@@ -150,7 +133,6 @@
                     android:paddingEnd="2dp" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/et_reg_pupil_grade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,10 +145,10 @@
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#757575"
+                    android:visibility="gone" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/et_reg_student_place"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -175,14 +157,14 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Место учебы"
                     android:importantForAutofill="no"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#757575"
+                    android:visibility="gone" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/et_reg_student_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -191,14 +173,14 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Курс"
                     android:importantForAutofill="no"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#757575"
+                    android:visibility="gone" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/et_reg_teacher_place"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -207,14 +189,14 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Место работы"
                     android:importantForAutofill="no"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#757575"
+                    android:visibility="gone" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/et_reg_teacher_position"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -223,11 +205,12 @@
                     android:background="@drawable/rounded_edit_text"
                     android:hint="Должность"
                     android:importantForAutofill="no"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#757575"
+                    android:visibility="gone" />
             </LinearLayout>
 
         </ScrollView>
@@ -237,24 +220,28 @@
             android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_register"
+            android:text="Далее"
+            app:backgroundTint="#0284C7"
             app:cornerRadius="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/goto_log_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/goto_log_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_goto_log"
-            app:cornerRadius="16dp"
-            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <ImageView
+        android:id="@+id/goto_log_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:cropToPadding="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:scaleType="centerInside"
+        app:backgroundTint="#ffffff"
+        app:cornerRadius="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
 </androidx.constraintlayout.widget.ConstraintLayout>

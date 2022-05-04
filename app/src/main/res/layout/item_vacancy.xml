@@ -8,6 +8,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginRight="5dp"
     android:layout_marginBottom="10dp"
+    android:elevation="8dp"
     android:padding="20dp"
     app:cardElevation="2dp"
     card_view:cardCornerRadius="16dp"
@@ -16,13 +17,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="4dp">
 
         <TextView
-            android:id="@+id/tvDate"
+            android:id="@+id/tvJobName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:fontFamily="@font/montserrat"
+            android:padding="4dp"
             android:text="TextView"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -31,14 +35,54 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="4dp">
 
             <TextView
-                android:id="@+id/tvJobName"
+                android:id="@+id/tvDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_login_card"
+                android:backgroundTint="@color/light_gray"
                 android:fontFamily="@font/montserrat"
+                android:padding="4dp"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvEmployment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_login_card"
+                android:backgroundTint="@color/light_gray"
+                android:fontFamily="@font/montserrat"
+                android:padding="4dp"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_login_card"
+                android:backgroundTint="@color/light_gray"
+                android:fontFamily="@font/montserrat"
+                android:padding="4dp"
                 android:text="TextView"
                 android:textColor="#000000"
                 android:textSize="16sp" />
@@ -48,32 +92,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_login_card"
+                android:backgroundTint="@color/light_gray"
                 android:fontFamily="@font/montserrat"
+                android:padding="4dp"
                 android:text="TextView"
                 android:textColor="#000000"
                 android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat"
-                android:text="TextView"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvEmployment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/montserrat"
-            android:text="TextView"
-            android:textColor="#000000"
-            android:textSize="16sp" />
 
     </LinearLayout>
 

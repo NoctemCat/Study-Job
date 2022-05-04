@@ -49,7 +49,7 @@ class LoginFragment : HiddenActionBarFragment() {
         buttonGotoReg.setOnClickListener{view->
             val fragmentManager = (view.context as FragmentActivity).supportFragmentManager
             fragmentManager.beginTransaction().replace(R.id.root_fragment_activity_main,
-                EntityTypeFragment.newInstance()
+                RegisterFragment.newInstance()
             ).commit()
         }
 

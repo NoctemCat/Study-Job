@@ -17,44 +17,32 @@
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
         android:text="Пожалуйста пройдите тест профориентации"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center_horizontal"
-        android:text="Он необходим для выдачи вам рекомендации по профессиям"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
-        android:text="Из каждой пары вам необходимо  будет выбрать одну профессию"
+        android:text="Вам будут предложены 42 пары профессий. Из каждой пары вам нужно будет выбрать один вариант, который вам больше нравится и лучше всего подходит, но не с точки зрения престижности, а с точки зрения содержания работы и вашего отношения к тому, что необходимо делать"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/goto_test_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
         android:fontFamily="@font/montserrat"
         android:text="Далее"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"

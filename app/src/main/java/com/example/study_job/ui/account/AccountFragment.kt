@@ -10,8 +10,11 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.study_job.BaseFragment
 import com.example.study_job.R
+import com.example.study_job.data.user.SharedPrefManager
 import com.example.study_job.databinding.FragmentAccountBinding
+import com.example.study_job.ui.StartTestFragment
 import com.example.study_job.ui.guide.PersonaFragment
+import com.example.study_job.ui.profession.ProfessionFragment
 import com.google.android.material.button.MaterialButton
 
 class AccountFragment : BaseFragment(){
@@ -37,12 +40,22 @@ class AccountFragment : BaseFragment(){
         }
 
         gotoPersonaBtn.setOnClickListener {
-            val fragmentManager =
-                (binding.root.context as FragmentActivity).supportFragmentManager
-            fragmentManager.beginTransaction().replace(
-                R.id.nav_host_fragment_activity_main,
-                PersonaFragment()
-            ).commit()
+            val user = SharedPrefManager.getUser(gotoPersonaBtn.context)
+
+            if(user.personality == "-1"){
+                val fragmentManager = (gotoPersonaBtn.context as FragmentActivity).supportFragmentManager
+                fragmentManager.beginTransaction().replace(
+                    R.id.nav_host_fragment_activity_main,
+                    StartTestFragment()
+                ).commit()
+            }
+            else{
+                val fragmentManager = (gotoPersonaBtn.context as FragmentActivity).supportFragmentManager
+                fragmentManager.beginTransaction().replace(
+                    R.id.nav_host_fragment_activity_main,
+                    PersonaFragment()
+                ).commit()
+            }
         }
         return root
     }

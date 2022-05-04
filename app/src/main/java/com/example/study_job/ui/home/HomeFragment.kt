@@ -25,13 +25,6 @@ class HomeFragment : BaseFragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val textView: TextView = binding.textHome
-
-        val homeViewModel =
-            ViewModelProvider(this)[HomeViewModel::class.java]
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

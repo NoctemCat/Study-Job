@@ -43,7 +43,6 @@ class SharedPrefManager {
             editor.apply()
         }
 
-        //this method will checker whether user is already logged in or not
         fun isLoggedIn(context: Context): Boolean{
             val sharedPreferences: SharedPreferences = context.getSharedPreferences(
                 SHARED_PREF_NAME, Context.MODE_PRIVATE
@@ -79,7 +78,6 @@ class SharedPrefManager {
             editor.apply()
         }
 
-        //this method will logout the user
         fun logout(context: Context) {
             val sharedPreferences: SharedPreferences = context.getSharedPreferences(
                 SHARED_PREF_NAME, Context.MODE_PRIVATE

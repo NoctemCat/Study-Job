@@ -30,9 +30,7 @@ class ContentFragment : Fragment() {
         _binding = FragmentContentBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
-        val navHost: View = binding.navHostFragmentActivityMain
         val navView: BottomNavigationView = binding.navView
-        //navView.itemIconTintList = null
 
         if(savedInstanceState == null){
             replaceFragment(HomeFragment())
@@ -58,6 +56,8 @@ class ContentFragment : Fragment() {
             }
             true
         }
+
+
 
         return root
     }

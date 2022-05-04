@@ -30,14 +30,7 @@ class AccountFragment : BaseFragment(){
     ): View {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val textView: TextView = binding.textAccount
         val gotoPersonaBtn: MaterialButton = binding.gotoPersonaBtn
-
-        val notificationsViewModel =
-            ViewModelProvider(this)[AccountViewModel::class.java]
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
 
         gotoPersonaBtn.setOnClickListener {
             val user = SharedPrefManager.getUser(gotoPersonaBtn.context)
@@ -57,6 +50,33 @@ class AccountFragment : BaseFragment(){
                 ).commit()
             }
         }
+
+        val user = SharedPrefManager.getUser(root.context)
+
+        val tvUserName: TextView = binding.tvUserName
+        val tvUserAge: TextView = binding.tvUserAge
+        val tvUserType: TextView = binding.tvUserType
+
+        tvUserName.text = user.name
+        tvUserAge.text = user.age.toString()
+
+        when (user.role) {
+            "school" -> {
+                tvUserType.text = "Школьник"
+            }
+            "student" -> {
+                tvUserType.text = "Студент"
+            }
+            "teacher" -> {
+                tvUserType.text = "Преподаватель"
+            }
+        }
+
+        val logout: MaterialButton = binding.logoutBtn
+        logout.setOnClickListener {
+            SharedPrefManager.logout(logout.context)
+        }
+
         return root
     }
 

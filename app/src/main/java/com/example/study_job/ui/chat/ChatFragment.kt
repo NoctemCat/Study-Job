@@ -1,14 +1,10 @@
 package com.example.study_job.ui.chat
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
 import com.example.study_job.BaseFragment
-import com.example.study_job.R
 import com.example.study_job.databinding.FragmentChatBinding
 
 
@@ -24,15 +20,7 @@ class ChatFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        val textView: TextView = binding.textChat
-
-        val notificationsViewModel =
-            ViewModelProvider(this)[ChatViewModel::class.java]
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

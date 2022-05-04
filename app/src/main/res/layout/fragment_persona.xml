@@ -16,7 +16,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="eee"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +42,7 @@
 
             android:fontFamily="@font/montserrat"
             android:gravity="fill_horizontal"
-            android:text="TextView"
+            android:text="Подождите, информация загружается..."
             android:textSize="16sp" />
     </androidx.core.widget.NestedScrollView>
 
@@ -52,7 +51,11 @@
         android:id="@+id/goto_test_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat"
+        android:padding="12dp"
         android:text="Пройти тест заново"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:backgroundTint="#0284C7"
